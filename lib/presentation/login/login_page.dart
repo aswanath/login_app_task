@@ -14,7 +14,6 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Colors.black,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 40),
         child: Column(
@@ -51,13 +50,18 @@ class LoginPage extends StatelessWidget {
                     passwordController.text.isNotEmpty) {
                   Navigator.pushAndRemoveUntil(
                       context,
-                      MaterialPageRoute(builder: (context) => const CustomNavigationBar()),
+                      MaterialPageRoute(
+                          builder: (context) => const CustomNavigationBar()),
                       (route) => false);
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    content: Text("Please enter some data"),
+                  ));
                 }
               },
               child: Text(
                 "Sign In",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                style:  TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.red),
@@ -71,7 +75,8 @@ class LoginPage extends StatelessWidget {
               TextSpan(
                   text: "Forgot Password? ",
                   style: TextStyle(
-                      color: Colors.white,
+                      decoration: TextDecoration.underline,
+                      color: Colors.blue,
                       fontSize: 18,
                       fontWeight: FontWeight.bold)),
               style: TextStyle(color: Colors.grey),

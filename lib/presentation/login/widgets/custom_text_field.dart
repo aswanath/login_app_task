@@ -13,12 +13,12 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: textEditingController,
-      cursorColor: Colors.white,
-      style: const TextStyle(color: Colors.white70),
+      cursorColor: Colors.black,
+      style: const TextStyle(color: Colors.black),
       decoration: InputDecoration(
         hintText: text,
-        hintStyle: const TextStyle(color: Colors.white60),
-        fillColor: Colors.white38,
+        hintStyle: const TextStyle(color: Colors.black38),
+        fillColor: Colors.black12,
         filled: true,
         focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(5),borderSide: BorderSide.none),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(5),borderSide: BorderSide.none),
